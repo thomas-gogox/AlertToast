@@ -254,12 +254,14 @@ public struct AlertToast: View{
                     if title != nil {
                         Text(LocalizedStringKey(title ?? ""))
                             .font(style?.titleFont ?? Font.headline.bold())
+                            .textColor(style?.titleColor ?? nil)
                     }
                 }
                 
                 if subTitle != nil{
                     Text(LocalizedStringKey(subTitle!))
                         .font(style?.subTitleFont ?? Font.subheadline)
+                        .textColor(style?.subtitleColor ?? nil)
                 }
             }
             .fixedSize(horizontal: false, vertical: true)
