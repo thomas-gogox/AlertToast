@@ -229,7 +229,7 @@ public struct AlertToast: View{
             Spacer()
             
             //Banner view starts here
-            VStack(alignment: .leading, spacing: 10){
+            VStack(alignment: .leading, spacing: 0){
                 HStack{
                     switch type{
                     case .complete(let color):
@@ -506,7 +506,7 @@ public struct AlertToastModifier: ViewModifier{
                     .onDisappear(perform: {
                         completion?()
                     })
-                    .transition(alert().displayMode == .banner(.slide) ? AnyTransition.slide.combined(with: .opacity) : AnyTransition.move(edge: .bottom))
+                    .transition(alert().displayMode == .banner(.slide) ? AnyTransition.slide.combined(with: .opacity) : AnyTransition.move(edge: .bottom).combined(with: .opacity)
             }
             
         }
