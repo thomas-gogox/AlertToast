@@ -251,8 +251,10 @@ public struct AlertToast: View{
                         EmptyView()
                     }
                     
-                    Text(LocalizedStringKey(title ?? ""))
-                        .font(style?.titleFont ?? Font.headline.bold())
+                    if title != nil {
+                        Text(LocalizedStringKey(title ?? ""))
+                            .font(style?.titleFont ?? Font.headline.bold())
+                    }
                 }
                 
                 if subTitle != nil{
@@ -260,6 +262,7 @@ public struct AlertToast: View{
                         .font(style?.subTitleFont ?? Font.subheadline)
                 }
             }
+            .fixedSize(horizontal: false, vertical: true)
             .multilineTextAlignment(.leading)
             .textColor(style?.titleColor ?? nil)
             .padding()
